@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "imba-source", ">= 0.11.6"
+  spec.add_dependency "imba-source", ">= 0.12.1"
   spec.add_dependency "tilt", ">= 1", "< 3"
   spec.add_dependency "execjs", "~> 2.0"
 

@@ -6,7 +6,7 @@ require "execjs"
 module Imba
   class Template < ::Tilt::Template
     def self.compiler_source
-      File.read Imba::Source.path_for("compiler.js")
+      File.read Imba::Source.path_for("imbac.js")
     end
 
     def self.context
