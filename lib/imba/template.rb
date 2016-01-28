@@ -9,8 +9,12 @@ module Imba
       .map { |x| Imba::Source.path_for(x) }
       .detect { |x| File.exist?(x) }
 
+    def self.compiler_path
+      PATH or raise "Cannot find Imba source code"
+    end
+
     def self.compiler_source
-      File.read PATH
+      File.read(compiler_path)
     end
 
     def self.context
