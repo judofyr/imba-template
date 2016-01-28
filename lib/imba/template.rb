@@ -5,8 +5,12 @@ require "execjs"
 
 module Imba
   class Template < ::Tilt::Template
+    PATH = ["imbac.dev.js", "imbac.js"]
+      .map { |x| Imba::Source.path_for(x) }
+      .detect { |x| File.exist?(x) }
+
     def self.compiler_source
-      File.read Imba::Source.path_for("imbac.js")
+      File.read PATH
     end
 
     def self.context
